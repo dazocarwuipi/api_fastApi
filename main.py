@@ -30,8 +30,8 @@ class User(BaseModel):
     ga_ap_mac: str
     ga_cmac: str
     ga_Qv:   str
-    ga_user: str | None = None
-    ga_pass: str | None = None
+    ga_user: str
+    ga_pass: str 
 
 credentials = 'GzYbNKfU1nSoqoBa:L2aCXjjDzdpfT6p4NHpbl1Or7iXbI3'
 b64 = base64.b64encode(credentials.encode('ascii'))
