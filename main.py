@@ -44,7 +44,7 @@ def get_token():
         'Authorization': 'Basic R3pZYk5LZlUxblNvcW9CYTpMMmFDWGpqRHpkcGZUNnA0TkhwYmwxT3I3aVhiSTM=',
         'Content-Type': 'application/x-www-form-urlencoded'
         }
-    response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.request("POST", url, headers=headers, data=payload, verify=False)
 
     resp = response.text
     resp_json = json.loads(resp)
@@ -64,7 +64,7 @@ async def user_login(user: User):
 
     payload = json.dumps(user.__dict__)
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.request("POST", url, headers=headers, data=payload, verify=False)
     resp = response.text
     resp_json = json.loads(resp)
     return resp_json
